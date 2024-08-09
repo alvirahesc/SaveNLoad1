@@ -14,4 +14,11 @@ public class Stats
     public int piercing;
     public int hp;
 
+    public int skill1;
+    public int skill2;
+    public int skill3;
+    public int skill4;
+    public int skill5;
+    public int skill6;
+
 }

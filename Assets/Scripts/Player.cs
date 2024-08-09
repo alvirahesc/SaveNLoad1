@@ -4,27 +4,18 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
+    public Stats charStats;
+
     //I say we do it like this its about saving ok?!
     public AudioClip[] clip;
     public AudioSource audioSource;
 
-    //stats
-    int atk;
-    int def;
-    int piercing;
-    int hp;
     public TextMeshProUGUI atktext;
     public TextMeshProUGUI deftext;
     public TextMeshProUGUI piercingtext;
     public TextMeshProUGUI hptext;
 
     //skills
-    int skill1;
-    int skill2;
-    int skill3;
-    int skill4;
-    int skill5;
-    int skill6;
     public TextMeshProUGUI skill1text;
     public TextMeshProUGUI skill2text;
     public TextMeshProUGUI skill3text;
@@ -47,15 +38,15 @@ public class Player : MonoBehaviour
     //method to randomize the stats and play sound
     public void RandomizeStats()
     {
-        atk = Random.Range(5000, 10000);
-        def = Random.Range(3000, 5000);
-        piercing = Random.Range(70, 98);
-        hp = Random.Range(4000, 8000);
+        charStats.atk = Random.Range(5000, 10000);
+        charStats.def = Random.Range(3000, 5000);
+        charStats.piercing = Random.Range(70, 98);
+        charStats.hp = Random.Range(4000, 8000);
 
-        atktext.text = atk.ToString();
-        deftext.text = def.ToString();
-        piercingtext.text = piercing.ToString();
-        hptext.text = hp.ToString();
+        atktext.text = charStats.atk.ToString();
+        deftext.text = charStats.def.ToString();
+        piercingtext.text = charStats.piercing.ToString();
+        hptext.text = charStats.hp.ToString();
 
         audioSource.clip = clip[0];
         audioSource.Play();
@@ -63,19 +54,19 @@ public class Player : MonoBehaviour
 
     public void RandomizeUpgrades()
     {
-        skill1 = Random.Range(10, 60);
-        skill2 = Random.Range(10, 60);
-        skill3 = Random.Range(10, 60);
-        skill4 = Random.Range(10, 60);
-        skill5 = Random.Range(10, 60);
-        skill6 = Random.Range(10, 60);
+        charStats.skill1 = Random.Range(10, 60);
+        charStats.skill2 = Random.Range(10, 60);
+        charStats.skill3 = Random.Range(10, 60);
+        charStats.skill4 = Random.Range(10, 60);
+        charStats.skill5 = Random.Range(10, 60);
+        charStats.skill6 = Random.Range(10, 60);
 
-        skill1text.text = "+" + skill1.ToString();
-        skill2text.text = "+" + skill2.ToString();
-        skill3text.text = "+" + skill3.ToString();
-        skill4text.text = "+" + skill4.ToString();
-        skill5text.text = "+" + skill5.ToString();
-        skill6text.text = "+" + skill6.ToString();
+        skill1text.text = "+" + charStats.skill1.ToString();
+        skill2text.text = "+" + charStats.skill2.ToString();
+        skill3text.text = "+" + charStats.skill3.ToString();
+        skill4text.text = "+" + charStats.skill4.ToString();
+        skill5text.text = "+" + charStats.skill5.ToString();
+        skill6text.text = "+" + charStats.skill6.ToString();
 
         audioSource.clip = clip[0];
         audioSource.Play();
