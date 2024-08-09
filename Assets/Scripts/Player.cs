@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+//i deleted some namepsace cuz they not being used
 
 public class Player : MonoBehaviour
 {
-    //referring to the Stats script, now Player script has the variables in that script too.
-    //public Stats charStats;
-
+    //I say we do it like this its about saving ok?!
+    public AudioClip[] clip;
+    public AudioSource audioSource;
 
     //stats
     int atk;
@@ -20,13 +18,13 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI piercingtext;
     public TextMeshProUGUI hptext;
 
+    //skills
     int skill1;
     int skill2;
     int skill3;
     int skill4;
     int skill5;
     int skill6;
-
     public TextMeshProUGUI skill1text;
     public TextMeshProUGUI skill2text;
     public TextMeshProUGUI skill3text;
@@ -46,7 +44,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    //method to randomize the stats
+    //method to randomize the stats and play sound
     public void RandomizeStats()
     {
         atk = Random.Range(5000, 10000);
@@ -58,6 +56,9 @@ public class Player : MonoBehaviour
         deftext.text = def.ToString();
         piercingtext.text = piercing.ToString();
         hptext.text = hp.ToString();
+
+        audioSource.clip = clip[0];
+        audioSource.Play();
     }
 
     public void RandomizeUpgrades()
@@ -75,6 +76,9 @@ public class Player : MonoBehaviour
         skill4text.text = "+" + skill4.ToString();
         skill5text.text = "+" + skill5.ToString();
         skill6text.text = "+" + skill6.ToString();
+
+        audioSource.clip = clip[0];
+        audioSource.Play();
     }
 
 }
